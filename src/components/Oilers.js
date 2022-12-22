@@ -34,11 +34,11 @@ function Oilers() {
             name: 'Oilers',
             abbreviation: 'EDM',
             statistic: {
-              goals: 30,
-              wins: 20,
-              losses: 5,
-              points: 46,
-              gamesPlayed: 25,
+              goals: 124,
+              wins: 18,
+              losses: 15,
+              points: 38,
+              gamesPlayed: 33,
             },
           })
           .then((response) => {

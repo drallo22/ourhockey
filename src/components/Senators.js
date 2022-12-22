@@ -30,11 +30,11 @@ function Senators() {
         name: 'Senators',
         abbreviation: 'OTT',
         statistic: {
-          goals: 11,
-          wins: 15,
-          losses: 10,
-          points: 34,
-          gamesPlayed: 25,
+          goals: 98,
+          wins: 14,
+          losses: 19,
+          points: 30,
+          gamesPlayed: 33,
         },
       })
       .then((response) => {

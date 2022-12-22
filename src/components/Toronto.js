@@ -34,11 +34,11 @@ function Toronto() {
             name: 'Maple Leafs',
             abbreviation: 'TOR',
             statistic: {
-              goals: 15,
-              wins: 24,
-              losses: 1,
-              points: 59,
-              gamesPlayed: 25,
+              goals: 107,
+              wins: 20,
+              losses: 13,
+              points: 46,
+              gamesPlayed: 33,
             },
           })
           .then((response) => {

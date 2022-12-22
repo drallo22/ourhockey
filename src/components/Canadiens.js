@@ -30,11 +30,11 @@ function Canadiens() {
         name: 'Canadiens',
         abbreviation: 'MTL',
         statistic: {
-          goals: 9,
-          wins: 22,
-          losses: 3,
-          points: 54,
-          gamesPlayed: 25,
+          goals: 89,
+          wins: 15,
+          losses: 18,
+          points: 33,
+          gamesPlayed: 33,
         },
       })
       .then((response) => {
