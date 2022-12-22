@@ -13,7 +13,7 @@ function Player({player,deletePlayer})
         <div>
 
                 <div >
-                <p onClick={handleClick}> First Name: {player.firstName} Last Name: {player.lastName} Age: {player.age}</p>
+                <p onClick={handleClick}> Name: {player.firstName} {player.lastName} Age: {player.age}</p>
 
                     </div>
                     {clicked && <button onClick={() =>{deletePlayer(player.id)}}>Delete</button>} 

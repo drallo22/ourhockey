@@ -139,6 +139,8 @@ function App() {
              {displayOPlayers && <OilersPlayers />}
             </Col>
           </Row>
+          <br/>
+          <br/>
           </Container>
 </div>
 );
