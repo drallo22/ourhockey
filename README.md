@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+<h1>OurHockey</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+OurHockey is a website intended for hockey fans! It allows users to see information about 4 Canadian hockey teams while also being able to add players to a team's roster. Users are also able to rate each time out of 5 stars!
+The front-end of OurHockey was built using ReactJs/Javascript, CSS and HTML as languages, all coded in Visual Studio Code.
 
-## Available Scripts
+<h2>Getting Started</h2>
+To get started with this project, follow these steps:
 
-In the project directory, you can run:
+Clone or download the repository to your local machine
+Install the necessary dependencies by running npm install (or yarn install)
+Start the development server by running npm start (or yarn start)
+Open your browser and navigate to http://localhost:3000 to view the project
 
-### `npm start`
+<h2>Challenges</h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A challenge I faced was to style the website in a clean and simple way but also effective for the user. I did not have many ideas to be able to display all the information without it looking messy. I overcame this challenge by using conditional rendering to allow for a cleaner look while also being able to display all information with a click of a button.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h2>Design</h2>
 
-### `npm test`
+Each team has their own component to display information about themselves, as well as a component for the player list of that team. The team name components (Canadiens, Senators, Toronto, Oilers) have a get and post method to display the information. The player list component for each team has a get, post and delete method which leads to the information being input by the user to be displayed and deleted if wanted. The team component is what displays the information in a list format. The player component displays the player information from the user input and allows for deletion of any player. 
+The app.js is where everything is put together and styled using bootstrap. Conditional rendering is used to allow users to see certain information only when a certain button is pressed. 
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h3>Each team has the same buttons and styling.</h3>
 
-### `npm run build`
+![image](https://user-images.githubusercontent.com/43860617/209410572-a544ebee-bb22-4739-8f31-03edf2f7f4e6.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<h3>The HeartSwitch library allows users to switch the background color of the website between white and grey (light and dark mode)</h3>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![image](https://user-images.githubusercontent.com/43860617/209410352-45e9b83b-721d-442c-9b23-18066135d59e.png)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h3>The Rating library lets users rate each team out of 5 stars.</h3>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![image](https://user-images.githubusercontent.com/43860617/209410147-2b93d7ea-c528-416e-af75-8642cbee2b54.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<h2>Future</h2>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+In the future we hope to expand to all 32 nhl teams while also giving users enhanced features for an even better experience. 
 
-## Learn More
+<h4>Link to backend repository</h4>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://github.com/drallo22/OurHockeyBackend
