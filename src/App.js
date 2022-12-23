@@ -32,12 +32,11 @@ function App() {
   const [checked, setChecked] = useState(false);
 
   return (
-    <div className="App">
+    <div className={`App ${checked ? 'bg-secondary' : ''}`}>
       {}
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="#home">Our Hockey</Navbar.Brand>
         <Navbar.Collapse className="justify-content-end">
-         
          
           <HeartSwitch
             size="lg"
@@ -52,25 +51,27 @@ function App() {
               setChecked(event.target.checked);
             }}
           />
+        
         </Navbar.Collapse>
       </Navbar>
 
       <Container>
         <Row>
           <Col>
-            <h3>Teams</h3>
+            <h3>Go Through Teams In Order</h3>
            
           </Col>
         </Row>
         <Row>
           <Col className="text-center">
           <Rating style={{ maxWidth: 200 }} value={rating} onChange={setRating} />
-          <img src="https://thehockeynews.com/.image/c_fit%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_620/MTg1MDUwOTU0MzYzMjQ5OTQ1/nhl-logo-rankings-no-13-montreal-canadiens.jpg" alt="Montreal Canadiens logo" style={{ width: '110px', height: '80px' }} />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Montreal_Canadiens.svg/1200px-Montreal_Canadiens.svg.png" alt="Montreal Canadiens logo" style={{ width: '110px', height: '80px' }} />
       <br />
             {}
             <Button
               onClick={() => setDisplayCanadiens(!displayCanadiens)}
               variant="secondary"
+              className={`${checked ? 'btn-dark' : ''}`}
             >
               Canadiens
             </Button>
@@ -80,6 +81,7 @@ function App() {
               <Button
                 onClick={() => setDisplayCPlayers(!displayCPlayers)}
                 variant="secondary"
+                className={`${checked ? 'btn-dark' : ''}`}
               >
                 Player List
               </Button>
@@ -91,12 +93,12 @@ function App() {
           <Rating style={{ maxWidth: 200 }} value={rating2} onChange={setRating2}/>
             <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Toronto_Maple_Leafs_2016_logo.svg/1200px-Toronto_Maple_Leafs_2016_logo.svg.png" alt="Toronto Maple Leafs logo" style={{ width: '80px', height: '80px' }} />
             <br />
-            <Button variant="secondary" onClick={() => setDisplayToronto(!displayToronto)}>
+            <Button variant="secondary" className={`${checked ? 'btn-dark' : ''}`} onClick={() => setDisplayToronto(!displayToronto)}>
               Maple Leafs
             </Button>
               {displayToronto && <Toronto />}
               {displayToronto && (
-              <Button variant="secondary" onClick={() => setDisplayTPlayers(!displayTPlayers)}>
+              <Button variant="secondary" className={`${checked ? 'btn-dark' : ''}`} onClick={() => setDisplayTPlayers(!displayTPlayers)}>
                 Player List
              </Button>
                )}
@@ -110,12 +112,12 @@ function App() {
             <Rating style={{ maxWidth: 200 }} value={rating3} onChange={setRating3}/>
             <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b2/Ottawa_Senators_2020-2021_logo.svg/1200px-Ottawa_Senators_2020-2021_logo.svg.png" alt="Toronto Maple Leafs logo" style={{ width: '100px', height: '80px' }} />
             <br />
-            <Button variant="secondary" onClick={() => setDisplayOttawa(!displayOttawa)}>
+            <Button variant="secondary" className={`${checked ? 'btn-dark' : ''}`} onClick={() => setDisplayOttawa(!displayOttawa)}>
               Senators
             </Button>
               {displayOttawa && <Senators />}
               {displayOttawa && (
-              <Button variant="secondary" onClick={() => setDisplaySPlayers(!displaySPlayers)}>
+              <Button variant="secondary" className={`${checked ? 'btn-dark' : ''}`} onClick={() => setDisplaySPlayers(!displaySPlayers)}>
                 Player List
              </Button>
                )}
@@ -127,12 +129,12 @@ function App() {
             <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Logo_Edmonton_Oilers.svg/640px-Logo_Edmonton_Oilers.svg.png" 
             alt="Toronto Maple Leafs logo" style={{ width: '80px', height: '80px' }} />
             <br />
-            <Button variant="secondary" onClick={() => setDisplayEdmonton(!displayEdmonton)}>
+            <Button variant="secondary" className={`${checked ? 'btn-dark' : ''}`} onClick={() => setDisplayEdmonton(!displayEdmonton)}>
               Oilers
             </Button>
               {displayEdmonton && <Oilers />}
               {displayEdmonton && (
-              <Button variant="secondary" onClick={() => setDisplayOPlayers(!displayOPlayers)}>
+              <Button variant="secondary"className={`${checked ? 'btn-dark' : ''}`} onClick={() => setDisplayOPlayers(!displayOPlayers)}>
                 Player List
              </Button>
                )}

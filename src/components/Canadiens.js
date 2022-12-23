@@ -53,15 +53,7 @@ function Canadiens() {
     loadTeamFromAPI();
   });
 
-  // const deletePlayer = (id) => {
-  //   axios
-  //     .delete('http://localhost:8082/api/players/' + id)
-  //     .then((response) => {
-  //       if (response.status === 200) {
-  //         loadPlayersFromAPI();
-  //       }
-  //     });
-  // };
+
   const handleClick = () => {
     addTeam();
     setShowButton(false);
@@ -69,7 +61,7 @@ function Canadiens() {
 
   return (
     <div>
-      {errorMessage}
+      
       
       {showButton && (
         <button onClick={() => handleClick()} >Show Team Info</button>

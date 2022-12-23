@@ -77,12 +77,13 @@ function CanadiensPlayers() {
        
         <div>
             
-                {errorMessage}
+                
      
         <form onSubmit={addPlayer}>
-            <input name="firstName"></input>
-            <input name="lastName"></input>
-            <input name="age"></input>
+            
+            <input name="firstName" placeholder="Enter First name"></input>
+            <input name="lastName" placeholder="Enter Last name"></input>
+            <input name="age" placeholder="Enter Age"></input>
             <button type="submit"> Add </button>
             
         </form>
