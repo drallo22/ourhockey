@@ -10,6 +10,7 @@ function Toronto() {
     const [team, setTeam] = useState([]);
     const [errorMessage, setErrorMessage] = useState("")
     const [showButton, setShowButton] = useState(true);
+    const [lastSeason, setLastSeason] = useState(false);
     
     const loadTeamFromAPI = ()=>{
   
@@ -53,6 +54,32 @@ function Toronto() {
           });
       };
 
+      const updateTeam =()=> {
+        axios
+          .put('http://localhost:8082/api/teams/2', {
+            city: 'Toronto',
+            name: 'Maple Leafs',
+            abbreviation: 'TOR',
+            statistic: {
+              goals: 354,
+              wins: 62,
+              losses: 20,
+              points: 112,
+              gamesPlayed: 82,
+            },
+          })
+          .then((response) => {
+            if (response.status === 200) {
+              setErrorMessage('');
+              loadTeamFromAPI();
+            }
+          })
+          .catch((error) => {
+            setErrorMessage('Error posting');
+            console.log(error);
+          });
+      };
+
     useEffect(()=>{
         loadTeamFromAPI();
 
@@ -63,6 +90,7 @@ function Toronto() {
     const handleClick = () => {
         addTeam();
         setShowButton(false);
+        setLastSeason(true);
       }
   
 
@@ -75,7 +103,7 @@ function Toronto() {
          {showButton && (
         <button onClick={() => handleClick()} >Show Team Info</button>
       )}
-
+       {lastSeason && <button onClick={() => updateTeam()} >Last season</button>}
         {team.map((team) => {
 
             return <Team  team={team} >

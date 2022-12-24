@@ -6,7 +6,7 @@ import Team from './Team';
 function Canadiens() {
   const [team, setTeam] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
-  const [added, setAdded] = useState(false); // new flag variable
+  const [lastSeason, setLastSeason] = useState(false);
   const [showButton, setShowButton] = useState(true); // new flag variable to track whether button should be displayed
 
   const loadTeamFromAPI = () => {
@@ -49,6 +49,32 @@ function Canadiens() {
       });
   };
 
+  const updateTeam =()=> {
+    axios
+      .put('http://localhost:8082/api/teams/1', {
+        city: 'Montreal',
+        name: 'Canadiens',
+        abbreviation: 'MTL',
+        statistic: {
+          goals: 203,
+          wins: 30,
+          losses: 52,
+          points: 80,
+          gamesPlayed: 82,
+        },
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          setErrorMessage('');
+          loadTeamFromAPI();
+        }
+      })
+      .catch((error) => {
+        setErrorMessage('Error posting');
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
     loadTeamFromAPI();
   });
@@ -57,6 +83,7 @@ function Canadiens() {
   const handleClick = () => {
     addTeam();
     setShowButton(false);
+    setLastSeason(true);
   }
 
   return (
@@ -65,7 +92,10 @@ function Canadiens() {
       
       {showButton && (
         <button onClick={() => handleClick()} >Show Team Info</button>
+        
       )}
+
+      {lastSeason && <button onClick={() => updateTeam()} >Last season</button>}
       {team.map((team) => {
         return <Team team={team} />;
       })}

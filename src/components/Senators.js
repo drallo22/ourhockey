@@ -6,7 +6,7 @@ import Team from './Team';
 function Senators() {
   const [team, setTeam] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
-  const [added, setAdded] = useState(false);
+  const [lastSeason, setLastSeason] = useState(false);
   const [showButton, setShowButton] = useState(true); 
 
   const loadTeamFromAPI = () => {
@@ -49,6 +49,32 @@ function Senators() {
       });
   };
 
+  const updateTeam =()=> {
+    axios
+      .put('http://localhost:8082/api/teams/3', {
+        city: 'Ottawa',
+        name: 'Senators',
+        abbreviation: 'OTT',
+        statistic: {
+          goals: 298,
+          wins: 42,
+          losses: 40,
+          points: 85,
+          gamesPlayed: 82,
+        },
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          setErrorMessage('');
+          loadTeamFromAPI();
+        }
+      })
+      .catch((error) => {
+        setErrorMessage('Error posting');
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
     loadTeamFromAPI();
   });
@@ -56,6 +82,7 @@ function Senators() {
   const handleClick = () => {
     addTeam();
     setShowButton(false);
+    setLastSeason(true);
   }
 
   return (
@@ -65,6 +92,7 @@ function Senators() {
       {showButton && (
         <button onClick={() => handleClick()} >Show Team Info</button>
       )}
+      {lastSeason && <button onClick={() => updateTeam()} >Last season</button>}
       {team.map((team) => {
         return <Team team={team} />;
       })}
