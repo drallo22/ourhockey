@@ -1,6 +1,6 @@
 <h1>OurHockey</h1>
 
-OurHockey is a website intended for hockey fans! It allows users to see information about 4 Canadian hockey teams while also being able to add players to a team's roster. Users are also able to rate each time out of 5 stars!
+OurHockey is a website intended for hockey fans! It allows users to see information about 4 Canadian hockey teams while also being able to add players to a team's roster. Users are also able to rate each time out of 5 stars! Users are also able to see statistics from last season for every team!
 The front-end of OurHockey was built using ReactJs/Javascript, CSS and HTML as languages, all coded in Visual Studio Code.
 
 <h2>Getting Started</h2>
